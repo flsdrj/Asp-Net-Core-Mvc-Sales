@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace SalesWebMvc.Models
 {
     public class Departament
     {
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+
         [Display (Name = "Identificador")]
         public int Id { get; set; }
 
