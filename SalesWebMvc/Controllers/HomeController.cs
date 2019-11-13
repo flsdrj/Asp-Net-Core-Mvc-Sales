@@ -13,8 +13,8 @@ namespace SalesWebMvc.Controllers
         public IActionResult Index()
         {
             ViewData["H1"] = "The Seler";
-            ViewData["H2"] = "Seja Bem Vindo";
-            ViewData["Message"] = "Aplicação de Francisco Luiz";
+            ViewData["H2"] = "Sejam Bem Vindos!";
+            ViewData["Message"] = "Developer: Francisco Luiz";
             return View(ViewData);
         }
 

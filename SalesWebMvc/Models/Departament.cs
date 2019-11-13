@@ -7,8 +7,7 @@ using System.Linq;
 namespace SalesWebMvc.Models
 {
     public class Departament
-    {
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+    {        
 
         [Display (Name = "Identificador")]
         public int Id { get; set; }
