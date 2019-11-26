@@ -1,6 +1,7 @@
 ﻿using SalesWebMvc.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace SalesWebMvc.Services
@@ -14,7 +15,7 @@ namespace SalesWebMvc.Services
             _context = context;
         }
 
-        public List<Seller> FindAll()
+        public List<Seller> GetAll()
         {
             return _context.Seller.ToList();
         }
@@ -27,7 +28,7 @@ namespace SalesWebMvc.Services
 
         public Seller GetbyId(int id)
         {
-            return _context.Seller.FirstOrDefault(obj => obj.Id == id);
+            return _context.Seller.Include(obj => obj.Departament).FirstOrDefault(obj => obj.Id == id);
         }
 
         public void Delete(int id)

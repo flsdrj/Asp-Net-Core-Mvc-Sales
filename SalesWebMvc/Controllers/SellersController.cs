@@ -18,7 +18,7 @@ namespace SalesWebMvc.Controllers
 
         public IActionResult Index()
         {
-            var list = _sellerService.FindAll();
+            var list = _sellerService.GetAll();
 
             return View(list);
         }
@@ -36,6 +36,22 @@ namespace SalesWebMvc.Controllers
         {
             _sellerService.AddSeller(Seller);
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _sellerService.GetbyId(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
         }
 
         public IActionResult Delete(int? id)
